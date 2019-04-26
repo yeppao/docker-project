@@ -4,7 +4,7 @@ Containers
 Créer un environnement
 
 Rapidement installer un ensemble d'applications pour mettre en place un site ou un système complet. 
-Il est aussi possible d'en créer, et de les compartimenter afin de ne pas influer sur le système hote
+Il est aussi possible d'en créer, et de les compartimenter afin de ne pas influer sur le système hôte
 
 L'isolation est le mot clé, il permet de garder votre système stable
 
@@ -12,7 +12,7 @@ L'isolation est le mot clé, il permet de garder votre système stable
 En fait Docker, c'est un linux embarqué :
 Docker virtualise un kernel linux qui permet de créer des conteneur nommés LXC <- Avant version 1.8, après utilisation du `libcontainer`
 
-Les containers sont des environnements indépendants qui vont venir utiliser des ressources de l'hôte (memoire, processeur, disques)
+Les containers sont des environnements indépendants qui vont venir utiliser des ressources de l'hôte (mémoires, processeurs, disques)
 1. [Executer un container](#executer-un-container)
 2. [Execution avancée d'un container](#execution-avancee-dun-container)
 3. [Interagir avec un container](#interagir-avec-un-container)
@@ -23,7 +23,7 @@ Executer un container
 $ docker run busybox
 ````
 
-Execution avancee d'un container
+Execution avancée d'un container
 --------------
 ````sh
 docker run -dit --name docker-project-apache -p 8080:80 -v ./examples/httpd:/usr/local/apache2/htdocs/ httpd:2.4
@@ -42,7 +42,7 @@ Avec `docker run [OPTIONS]` nous allons pouvoir surcharger le comportement d'une
 ````sh
 $ docker run -p 80:80 busybox
 ````
-Le flag `-p` nous permet de pouvoir exposer les ports de notre container vers la machine hôte, ainsi que vers l'exterieur
+Le flag `-p` nous permet de pouvoir exposer les ports de notre container vers la machine hôte, ainsi que vers l'extérieur
 
 ````sh
 $ docker run -d busybox
@@ -64,7 +64,7 @@ Le flag `-v` permet de monter un volume sur un container afin de pouvoir synchro
 
 ----
 
-Avec `docker run IMAGE[:TAG|@DIGEST]` définir quelle image nous souhaitons executer, nous pourrons aller jusqu'a préciser sa version
+Avec `docker run IMAGE[:TAG|@DIGEST]` définir quelle image nous souhaitons exécuter, nous pourrons aller jusqu'a préciser sa version
 
 ````sh
 $ docker run busybox:latest
@@ -72,7 +72,7 @@ $ docker run busybox:latest
 $ docker run busybox:1.30
 ````
 ----
-Avec `docker run IMAGE [COMMAND] [ARG...]` nous allons pouvoir executer des commandes dans notre container instancié
+Avec `docker run IMAGE [COMMAND] [ARG...]` nous allons pouvoir exécuter des commandes dans notre container instancié
 
 ````sh
 $ docker run busybox echo lol
@@ -87,7 +87,7 @@ Interagir avec un container
 $ docker exec [OPTIONS] CONTAINER [COMMAND]
 ````
 
-Par exemple, un conteneur précedemment éxecuté est en vie avec un processus principal Apache, seulement je souhaite pouvoir accéder au système de fichiers de celui-ci afin de vérifier son bon fonctionnement, je vais executer un shell
+Par exemple, un conteneur précedemment éxecuté est en vie avec un processus principal Apache, seulement je souhaite pouvoir accéder au système de fichiers de celui-ci afin de vérifier son bon fonctionnement, je vais exécuter un shell
 ```sh
 $ docker exec -it mon-container-apache sh
 ```
